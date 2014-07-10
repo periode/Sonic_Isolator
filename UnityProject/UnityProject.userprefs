@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\VolumeGauge.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameManager.cs" Line="8" Column="30" />
+      <File FileName="Assets\Scripts\Mouse.cs" Line="90" Column="2" />
+      <File FileName="Assets\Scripts\VolumeGauge.cs" Line="36" Column="57" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
