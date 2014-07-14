@@ -12,6 +12,7 @@ public class VolumeGauge : MonoBehaviour {
 
 	Vector2 scale;
 	Vector2 position;
+	Color originalColor;
 
 	Vector2 startScale = new Vector2(0.9f, 0.01f);
 	Vector2 startPos = new Vector2(0, -0.48f);
@@ -24,7 +25,7 @@ public class VolumeGauge : MonoBehaviour {
 		volumeCap = standardThreshold;
 		audio.volume = 0;
 
-
+		originalColor = volumeFill.renderer.material.color;
 
 	}
 	
@@ -42,8 +43,6 @@ public class VolumeGauge : MonoBehaviour {
 			volumeFill.transform.localScale = scale;
 			volumeFill.transform.localPosition = position;
 
-
-
 			audio.volume = scale.y;
 		}
 
@@ -51,6 +50,10 @@ public class VolumeGauge : MonoBehaviour {
 			audio.volume = volumeCap;
 		}
 
-		Debug.Log("volume :"+audio.volume);
+		if(!mouse.GetComponent<Mouse>().power){
+			volumeFill.renderer.material.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.3f);
+		}else if(mouse.GetComponent<Mouse>().power){
+			volumeFill.renderer.material.color = originalColor;
+		}
 	}
 }

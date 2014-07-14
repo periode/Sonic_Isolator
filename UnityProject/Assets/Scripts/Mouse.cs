@@ -43,8 +43,6 @@ public class Mouse : MonoBehaviour {
 		mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 		transform.position = mousePosition;
 
-		Debug.Log(power);
-
 		if(Input.GetMouseButtonDown(0)){
 			switch (s) {
 			case 1://volume
@@ -99,6 +97,8 @@ public class Mouse : MonoBehaviour {
 		}else if(col.tag == "Health"){
 			s = 4;
 		}
+
+		Debug.Log(col.tag);
 	}
 
 	void OnTriggerExit2D(){
