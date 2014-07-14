@@ -5,7 +5,7 @@ public class VolumeGauge : MonoBehaviour {
 
 	public float standardThreshold;
 	public float extremeThreshold;
-	float currentVolume;
+	public float volumeCap;
 
 	public GameObject volumeFill;
 	public GameObject mouse;
@@ -21,7 +21,10 @@ public class VolumeGauge : MonoBehaviour {
 
 		volumeFill.transform.localScale = startScale;
 		volumeFill.transform.localPosition = startPos;
-		currentVolume = standardThreshold;
+		volumeCap = standardThreshold;
+		audio.volume = 0;
+
+
 
 	}
 	
@@ -38,6 +41,16 @@ public class VolumeGauge : MonoBehaviour {
 
 			volumeFill.transform.localScale = scale;
 			volumeFill.transform.localPosition = position;
+
+
+
+			audio.volume = scale.y;
 		}
+
+		if(audio.volume > volumeCap){
+			audio.volume = volumeCap;
+		}
+
+		Debug.Log("volume :"+audio.volume);
 	}
 }

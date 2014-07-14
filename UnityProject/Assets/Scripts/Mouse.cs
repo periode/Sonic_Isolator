@@ -77,10 +77,10 @@ public class Mouse : MonoBehaviour {
 		}
 
 		if(extreme){
-			volumeGauge.audio.volume = volumeGauge.GetComponent<VolumeGauge>().extremeThreshold;
+			volumeGauge.GetComponent<VolumeGauge>().volumeCap = volumeGauge.GetComponent<VolumeGauge>().extremeThreshold;
 			button2.renderer.enabled = true;
 		}else{
-			volumeGauge.audio.volume = volumeGauge.GetComponent<VolumeGauge>().standardThreshold;
+			volumeGauge.GetComponent<VolumeGauge>().volumeCap = volumeGauge.GetComponent<VolumeGauge>().standardThreshold;
 			button2.renderer.enabled = false;
 		}
 
